@@ -56,7 +56,8 @@ class testSelectionSort {
 		assertArrayEquals(expectedOutput, resultArray);
 		
 	}
-
+	
+	@Test
 	void testDuplicates() {
 		//Arrange
 		int testArray [] = {7, -4, 5, 7, 5, -2, 5};
