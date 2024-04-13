@@ -23,12 +23,29 @@ class testSelectionSort {
 		assertArrayEquals(expectedOutput, resultArray);
 		
 	}
+
+	@Test
+	void testMixed() {
+		//Arrange
+		int testArray [] = {5, 7, 0, -2, 6, -8};
+		int expectedOutput [] = {-8, -2, 0, 5, 6, 7};
+
+		//act
+		SelectionSort sorter = new SelectionSort();
+		int resultArray [] = sorter.basicSelectionSort(testArray);
+
+		System.out.println("Mixed Result: " + Arrays.toString(resultArray));
+		assertArrayEquals(expectedOutput, resultArray);
+
+	}
+
 	
 	@Test
 	void testNegatives() {
 		//Arrange
 		int testArray [] = {-12, -4, -27, -5, -8, -9};
 		int expectedOutput [] = {-27, -12, -9, -8, -5, -4};
+	
 		
 		//act
 		SelectionSort sorter = new SelectionSort();
@@ -38,5 +55,19 @@ class testSelectionSort {
 		System.out.println("Negatives Result: " + Arrays.toString(resultArray));
 		assertArrayEquals(expectedOutput, resultArray);
 		
+	}
+
+	void testDuplicates() {
+		//Arrange
+		int testArray [] = {7, -4, 5, 7, 5, -2, 5};
+		int expectedOutput [] = {-4, -2, 5, 5, 5, 7, 7};
+
+		//act
+		SelectionSort sorter = new SelectionSort();
+		int resultArray [] = sorter.basicSelectionSort(testArray);
+
+		//assert
+		System.out.println("Duplicates Result: " + Arrays.toString(resultArray));
+		assertArrayEquals(expectedOutput, resultArray);
 	}
 }
